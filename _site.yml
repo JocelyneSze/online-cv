@@ -1,0 +1,9 @@
+name: "Online CV"
+output_dir: "docs"
+navbar:
+  title: "Jocelyne Shimin Sze"
+  left:
+   - text: "CV"
+     href: CV_2022.html
+output:
+ html_document:
