@@ -1,0 +1,134 @@
+---
+name: Jocelyne Shimin
+surname: Sze
+position: "薛诗敏 (she/her)"
+# address: "University of Sheffield, United Kingdom"
+www: jocelynesze.wordpress.com
+email: "jocelyne[dot]sze[at]gmail[dot]com"
+twitter: jocelynesze
+# github: jocelynesze
+# linkedin: jocelynesze
+date: "`r format(Sys.time(), '%B %Y')`"
+# header-includes:
+#   - \usepackage{xeCJK}
+output: vitae::markdowncv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+pacman::p_load(vitae, tibble, rorcid, tidyverse, janitor, rcrossref)
+# 0000-0001-8183-766X
+
+## 9 Feb 2022.
+## ARGH! finally happy with how this looks, with markdown cv able to render Chinese name cos the output seems to be html. BUT cannot be incorporated into Wordpress, just appears as LaTeX formatting. Maybe can push to GitHub?
+## If I use some other cv format which outputs as pdf, then Chinese becomes an issue. Supposed to do something like this, but the output is vitae, so how??
+# header-includes:
+#   - \usepackage{ctex}
+# output: 
+#   pdf_document:
+#     latex_engine: xelatex
+## Going to leave this for now, been trying to get this to work for too long (one week?)
+```
+
+## About me
+I am a Chinese Singaporean who grew up in a privileged, middle-class environment with an interest in biodiversity. Transitioning from a positivist natural scientist background, I am currently seeking to understand the world from diverse and plural perspectives, in pursuit of social and environmental justice. I am particularly interested in decolonial approaches to conservation and in higher education, and in navigating pathways to a degrowth planet.
+
+## Education
+```{r, education}
+tribble(
+  ~ Year, ~ Degree, ~ Institution,  ~ Details,
+  "2019-2023", "PhD in Ecology & Evolutionary Biology", "University of Sheffield, UK", "Exploring Indigenous peoples contributions to tropical forest conservation, on a University of Sheffield Faculty of Science Postgraduate Research Committee Fee Scholarship",
+  "2015-2016", "MRes in Ecosystem & Environmental Change (Distinction)", "Imperial College London, Silwood Park, UK", "Project on the identification and predictive modelling of global deforestation hotspots",
+  "2012-2015", "BA in Natural Sciences (2nd upper class honours)", "Peterhouse, University of Cambridge, UK", "Specialised in Zoology (ecology, conservation & palaeontology) on an undergraduate scholarship awarded by the Jardine Foundation"
+) %>% 
+  detailed_entries(when=Year, where=Degree, with=Institution, why=Details)
+```
+
+## Research experience
+```{r, research}
+tribble(
+  ~Year, ~Title, ~Institution, ~Details,
+  "2019-present", "Consultant", "Global South Partner GIS for 30 By 30", "Spatial GIS and economic analysis for the Global Deal for Nature 30 By 30 project, evaluating costs and benefits of expansion of global Protected Areas to 30% by 2030",
+  "2017-2018", "Research Associate", "Coupled Human-Natural Systems Lab, Nanyang Technological University, Singapore", "Evaluating the ecological and social factors behind forest fires in Sumatra, Indonesia. This project entailed combining socio-economic census and spatial data for provinces of Riau, Jambi and South Sumatra, and using GLMMs and Boosted Regression Trees to model active fires during the fire season in 2015",
+  "2015-2016", "Masters thesis", "Imperial College London,  supervised by Dr Ben Collen (deceased 19 May 2018) and Dr Sarah Whitmee from University College London, and Dr David Orme from Imperial College London", "Used global high-resolution forest loss dataset from 2000 to 2014 to identify deforestation hotspots by biomes and biogeographic realms, conducted literature search to identify key socioeconomic and physical drivers, compiled datasets, fitted predictive models in R, and projected 2015 and 2020 hotspots",
+  "Jul-Aug 2015", "Summer research assisstant", "Wilson Conservation Ecology Lab, University of Queensland, Australia", "Worked on various projects on land management and policy, conservation and ecosystem services. Conducted a literature review on causal impact methods in conservation literature, contributing to a publication"
+) %>%
+  detailed_entries(when=Year, where=Title, with=Institution, why=Details
+  )
+```
+
+## Teaching & outreach experience
+```{r, teaching}
+tribble(
+  ~Year, ~Title, ~Institution, ~Details,
+  "2019-2021", "Graduate Teaching Assistant", "R statistics courses, University of Sheffield", "Worked as a GTA for basic statistics in R courses and helping undergraduates with statistics from field data",
+  "30 March 2022", "Contributed talk", "Student Conference on Conservation Science 2022", "Presented work from my PhD on Deforestation and degradation in Indigenous lands across the tropics",
+  "13 Dec 2021", "Contributed talk", "International Congress for  Conservation Biology 2021", "Presented ongoing work on Conservation Basic Income done in collaboration with colleagues from other institutions",
+  "10 Nov 2021", "Invited contributor", "Decolonising the Curriculum Faculty workshop, University of Newcastle", "Presented my department's work on 'Contextualising the curriculum in Ecology and Evolutionary Biology' at their faculty meeting to do the same",
+  "28 Oct 2021", "Contributed talk", "RAI Anthropology and Conservation Conference 2021", "Co-presented ongoing work on Conservation Basic Income done in collaboration with colleagues from other institutions",
+  "23 Aug 2021", "Contributed talk", "Post-growth perspectives on Biodiversity Conservation symposium", "Co-presented ongoing work on Conservation Basic Income done in collaboration with colleagues from other institutions",
+  "22 June 2021", "Internal seminar", "Ecology & Conservation cluster internal seminar, University of Sheffield", "Presented my ongoing PhD research to our research cluster",
+  "16 June 2021", "Invited contributor", "Decolonisation and STEM workshop, University of Sheffield", "Presented my department's work on 'Contextualising the curriculum in Ecology and Evolutionary Biology' at a workshop organised by the Sheffield Institute for International Development",
+  "11 Mar 2021", "Invited speaker", "Sustainability Skills & Education (SusSEd) webinar series, University of Sheffield", "Presented my ongoing PhD research to general audience of undergraduate students",
+  "1-2 Dec 2020", "Poster presentation", "Grantham Annual Symposium", "Presented poster on my ongoing PhD research"
+) %>% 
+  detailed_entries(when=Year, where=Title, with=Institution, why=Details
+  )
+```
+[Link to my department's guide on Contextualising the Curriculum](https://sites.google.com/sheffield.ac.uk/contextualising-eeb-curriculum/home?authuser=0)
+
+[Link to presentation on Conservation Basic Income at the  Post-growth perspectives symposium](https://youtu.be/sf73VFzFGbc)
+
+## Fieldwork experience
+```{r, fieldwork}
+tribble(
+  ~Year, ~Title, ~Institution, ~Details,
+  "Sep 2017", "Fieldwork", "Jambi, Indonesia", "Conducted informal interviews with village heads to understand peat restoration and liveli- hood strategies",
+  "Nov 2016-Jan 2017", "Expedition member", "Greater Patagonian Trail, Imperial Exploration Board", "Obtained a grant from Imperial College London and Jeremy Wilson Charity Trust to undertake a long-distance hike through Chilean and Argentinian Patagonia. Passed through remote and physically challenging terrain and interacted with local rural settlers",
+  "Jul-Aug 2014", "Volunteer", "Asociacion para Conservasion de la Cuenca Amazonica, Cusco, Peru","Collected and identified herpetofauna at Villa Carmen Biological Station, Manu Biosphere Reserve",
+  "Jul-Aug 2013", "Volunteer", "Operation Wallacea, Limpopo, South Africa", "Conducted habitat assessments, game, bird and invertebrate diversity counts at Balule Game Reserve",
+  "Aug-Sep 2012", "Volunteer", "Coral Cay Conservation, Southern Leyte, the Philippines", "Conducted coral reef and invertebrate diversity surveys at Sogod Bay. Familiar with Indo-Pacific coral reef, fish and invertebrate identification",
+  "Jun-Jul 2012", "Volunteer", "Rimba, Peninsula Malaysia", "Set and retrieved camera traps, analysed camera trap photos for research investigating the effectiveness of viaducts as wildlife crossings at Gerik, Perak, and Kenyir, Terengganu",
+  "Mar 2007-Sep 2012", "Volunteer", "National Parks Board, Singapore", "Conducted seagrass monitoring surveys under TeamSeagrass, and mudflat/benthic dredging surveys under the Comprehensive Marine Biodiversity Survey. Familiar with Indo-Pacific seagrass identification"
+) %>% 
+  detailed_entries(when=Year, where=Title, with=Institution, why=Details
+  )
+```
+
+## Skills
+```{r, skills}
+tribble(
+  ~Type, ~Skill, ~Proficiency,
+  "Computing", "R programming language", "Proficient",
+  " ", "QGIS programme", "Proficient",
+  " ", "ArcGIS programme", "Competent",
+  "Language", "English", "Native",
+  " ", "Mandarin Chinese", "Fluent",
+  " ","Spanish", "Basic"
+) %>% 
+  brief_entries(
+    what=Skill, when=Type, with=Proficiency
+  )
+```
+
+## Publications
+```{r, publications}
+# use rorcid package to obtain DOIs for my publications
+# my_orcid <- "0000-0001-8183-766X"
+# my_works <- rorcid::works(my_orcid)
+# my_doi <- my_works$`external-ids.external-id`
+# my_doi <- my_doi %>%
+#   map(., compact) %>% 
+#   map_df(bind_rows) %>% 
+#   janitor::clean_names() %>% 
+#   filter(external_id_type == "doi") %>% 
+#   select(external_id_value)
+# # use rcrossref to obtain the bibtex citation file
+# my_crossref <- rcrossref::cr_cn(my_doi$external_id_value,
+#                                 format="bibtex")
+# my_bibtex <- file('./myWorks.bib')
+# writeLines(unlist(lapply(my_crossref, paste, collapse=" ")), con = my_bibtex)
+
+# print the publications 
+bibliography_entries("myWorks.bib") 
+```
