@@ -1,5 +1,5 @@
 ---
-title: online CV with vitae
+title: Jocelyne Sze CV
 name: Jocelyne Shimin
 surname: Sze
 position: "薛诗敏 (she/her)"
@@ -13,7 +13,11 @@ date: "`r format(Sys.time(), '%B %Y')`"
 # header-includes:
 #   - \usepackage{xeCJK}
 output: vitae::markdowncv
-
+knit: (function(input_file, encoding) {
+    out_dir <- 'docs';
+    rmarkdown::render(input_file,
+      encoding=encoding,
+      output_file=file.path(dirname(input_file), out_dir, 'vitae.html'))})
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +37,9 @@ pacman::p_load(vitae, tibble, rorcid, tidyverse, janitor, rcrossref)
 ```
 
 ## About me
-I am a Chinese Singaporean who grew up in a privileged, middle-class environment with an interest in biodiversity. Transitioning from a positivist natural scientist background, I am currently seeking to understand the world from diverse and plural perspectives, in pursuit of social and environmental justice. I am particularly interested in decolonial approaches to conservation and in higher education, and in navigating pathways to a degrowth planet.
+I am a Singaporean Chinese woman who grew up in a privileged, middle-class environment with an interest in biodiversity. Transitioning from a positivist natural scientist background, I am currently seeking to understand the world from diverse and plural perspectives, in pursuit of social and environmental justice. I am particularly interested in decolonial approaches to conservation and in higher education, and in navigating pathways to a degrowth planet.
+
+Last updated: May 2022
 
 ## Education
 ```{r, education}
@@ -63,8 +69,8 @@ tribble(
 ```{r, teaching}
 tribble(
   ~Year, ~Title, ~Institution, ~Details,
-  "2019-2021", "Graduate Teaching Assistant", "R statistics courses, University of Sheffield", "Worked as a GTA for basic statistics in R courses and helping undergraduates with statistics from field data",
   "30 March 2022", "Contributed talk", "Student Conference on Conservation Science 2022", "Presented work from my PhD on Deforestation and degradation in Indigenous lands across the tropics",
+    "2019-2021", "Graduate Teaching Assistant", "R statistics courses, University of Sheffield", "Worked as a GTA for basic statistics in R courses and helping undergraduates with statistics from field data",
   "13 Dec 2021", "Contributed talk", "International Congress for  Conservation Biology 2021", "Presented ongoing work on Conservation Basic Income done in collaboration with colleagues from other institutions",
   "10 Nov 2021", "Invited contributor", "Decolonising the Curriculum Faculty workshop, University of Newcastle", "Presented my department's work on 'Contextualising the curriculum in Ecology and Evolutionary Biology' at their faculty meeting to do the same",
   "28 Oct 2021", "Contributed talk", "RAI Anthropology and Conservation Conference 2021", "Co-presented ongoing work on Conservation Basic Income done in collaboration with colleagues from other institutions",
