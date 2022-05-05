@@ -70,6 +70,7 @@ tribble(
 tribble(
   ~Year, ~Title, ~Institution, ~Details,
   "30 March 2022", "Contributed talk", "Student Conference on Conservation Science 2022", "Presented work from my PhD on Deforestation and degradation in Indigenous lands across the tropics",
+  "23 February 2022", "Invited contributor", "Bioconnect Seminar, Cardiff University", "Presented my department's work on 'Contextualising the curriculum in Ecology and Evolutionary Biology'",
     "2019-2021", "Graduate Teaching Assistant", "R statistics courses, University of Sheffield", "Worked as a GTA for basic statistics in R courses and helping undergraduates with statistics from field data",
   "13 Dec 2021", "Contributed talk", "International Congress for  Conservation Biology 2021", "Presented ongoing work on Conservation Basic Income done in collaboration with colleagues from other institutions",
   "10 Nov 2021", "Invited contributor", "Decolonising the Curriculum Faculty workshop, University of Newcastle", "Presented my department's work on 'Contextualising the curriculum in Ecology and Evolutionary Biology' at their faculty meeting to do the same",
@@ -112,6 +113,7 @@ tribble(
   " ", "ArcGIS programme", "Competent",
   "Language", "English", "Native",
   " ", "Mandarin Chinese", "Fluent",
+  " ", "Teochew (Chinese dialect)", "Basic",
   " ","Spanish", "Basic"
 ) %>% 
   brief_entries(
